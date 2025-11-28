@@ -24,11 +24,11 @@ public class TicketOfficeUI {
     private File path = new File("src/data/newData.dat");
 
     // Scanner used to read user input from console
-   
+
     private Console console;
 
     // Constructor initializes the model and the scanner
-    
+
     public TicketOfficeUI() {
         this.ticketOffice = new TicketOffice();
         this.console = new Console();
@@ -161,7 +161,7 @@ public class TicketOfficeUI {
     // Event-related methods
 
     /**
-      Modify an existing event selected by ID.
+     * Modify an existing event selected by ID.
      */
     private void modifyEvent() {
         System.out.println("--- Modify Event ---");
@@ -230,7 +230,7 @@ public class TicketOfficeUI {
     }
 
     /**
-     *Register a new event reading required fields from the user.
+     * Register a new event reading required fields from the user.
      */
     private void registerEvent() {
         System.out.println("--- Register Event ---");
@@ -238,8 +238,8 @@ public class TicketOfficeUI {
         int id = console.readInt("ID: ");
         String name = console.readString("Name: ");
 
-        //Use validated date/time input
-       
+        // Use validated date/time input
+
         LocalDateTime dateTime = readValidDateTime();
 
         double price = console.readDouble("Ticket price: ");
@@ -250,6 +250,7 @@ public class TicketOfficeUI {
 
         if (ticketOffice.registerEvent(event)) {
             System.out.println("Event registered.");
+
         } else {
             System.out.println("Could not register the event.");
         }
@@ -257,7 +258,7 @@ public class TicketOfficeUI {
 
     // Customer-related methods
     /**
-     *Modify an existing customer.
+     * Modify an existing customer.
      */
     private void modifyCustomer() {
         System.out.println("--- Modify Customer ---");
@@ -284,7 +285,7 @@ public class TicketOfficeUI {
     }
 
     /**
-     *Delete a customer by ID.
+     * Delete a customer by ID.
      */
     private void deleteCustomer() {
         System.out.println("\n--- Delete Customer ---");
@@ -332,7 +333,7 @@ public class TicketOfficeUI {
     // Ticket-related methods
 
     /**
-     *  Sell a ticket for a given event and customer.
+     * Sell a ticket for a given event and customer.
      */
     private void sellTicket() {
         System.out.println("Sell Ticket");
@@ -358,7 +359,7 @@ public class TicketOfficeUI {
     }
 
     /**
-     *List all events printing their toString representation.
+     * List all events printing their toString representation.
      */
     private void listEvents() {
         System.out.println("Events List");
@@ -368,7 +369,7 @@ public class TicketOfficeUI {
     }
 
     /**
-    List all customers.
+     * List all customers.
      */
     private void listCustomers() {
         System.out.println("Customers List");
@@ -378,7 +379,7 @@ public class TicketOfficeUI {
     }
 
     /**
-     List all tickets sold.
+     * List all tickets sold.
      */
     private void listTickets() {
         System.out.println("Sold Tickets");
@@ -388,7 +389,7 @@ public class TicketOfficeUI {
     }
 
     /**
-     Search for an event by name and print it. 
+     * Search for an event by name and print it.
      */
     private void searchEventByName() {
         String name = console.readString("Event name: ");
@@ -401,7 +402,7 @@ public class TicketOfficeUI {
     }
 
     /**
-    Search for an event by ID and print it.
+     * Search for an event by ID and print it.
      */
     private void searchEventById() {
         int id = console.readInt("Event ID: ");
@@ -414,7 +415,7 @@ public class TicketOfficeUI {
     }
 
     /**
-     Search for a customer by ID and print it.
+     * Search for a customer by ID and print it.
      */
     private void searchCustomerById() {
         int id = console.readInt("Customer ID: ");
@@ -427,8 +428,8 @@ public class TicketOfficeUI {
     }
 
     /**
-      Reads a validated LocalDateTime from the user.
-      Keeps asking until a parsable date+time is provided.
+     * Reads a validated LocalDateTime from the user.
+     * Keeps asking until a parsable date+time is provided.
      */
     private LocalDateTime readValidDateTime() {
         LocalDateTime dateTime = null;
@@ -450,7 +451,7 @@ public class TicketOfficeUI {
     }
 
     /**
-    Generate report by delegating to the model.
+     * Generate report by delegating to the model.
      */
     private void generateReport() {
         System.out.println("Report");
@@ -458,14 +459,14 @@ public class TicketOfficeUI {
     }
 
     /**
-     Placeholder for saving data (not implemented yet).
+     * Placeholder for saving data (not implemented yet).
      */
     private void saveData() {
         System.out.println("(Save data not implemented yet)");
     }
 
     /**
-    Placeholder for loading data (not implemented yet).
+     * Placeholder for loading data (not implemented yet).
      */
     private void loadData() {
         System.out.println("(Load data not implemented yet)");
