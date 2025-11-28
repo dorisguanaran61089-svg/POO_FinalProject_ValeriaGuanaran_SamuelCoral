@@ -3,40 +3,33 @@ package ui;
 import java.util.Scanner;
 
 /**
- * EN: Utility class for console input/output. Centralizes all reading and writing
- *     operations to keep UI code clean and consistent.
- *
- * ES: Clase utilitaria para entrada/salida de consola. Centraliza todas las operaciones
- *     de lectura y escritura para mantener el código de la UI limpio y consistente.
+ Utility class for console input/output. Centralizes all reading and writing
+  operations to keep UI code clean and consistent.
  */
 public class Console {
     public Console(){
         this.scanner= new Scanner(System.in);
     }
 
-    // EN: Shared Scanner instance used for all console input.
-    // ES: Instancia compartida de Scanner usada para toda la entrada desde consola.
+    //Shared Scanner instance used for all console input.
     private Scanner scanner;
     
     /**
-     * EN: Writes a message followed by a newline.
-     * ES: Escribe un mensaje seguido de un salto de línea.
+     Writes a message followed by a newline.
      */
     public  void writeLine(Object message) {
         System.out.println(message);
     }
     
     /**
-     * EN: Writes a message without adding a newline.
-     * ES: Escribe un mensaje sin agregar un salto de línea.
+     Writes a message without adding a newline.
      */
     public  void write(Object message) {
         System.out.print(message);
     }
     
     /**
-     * EN: Displays a prompt and reads a full line of text from the user.
-     * ES: Muestra un mensaje y lee una línea completa de texto del usuario.
+    Displays a prompt and reads a full line of text from the user.
      */
     public  String readLine(String prompt) {
         System.out.print(prompt);
@@ -44,8 +37,7 @@ public class Console {
     }
     
     /**
-     * EN: Displays a prompt and reads an integer. Repeats until valid input is entered.
-     * ES: Muestra un mensaje y lee un entero. Repite hasta que el usuario ingrese un valor válido.
+    Displays a prompt and reads an integer. Repeats until valid input is entered.
      */
     public  int readInt(String prompt) {
         while (true) {
@@ -59,8 +51,7 @@ public class Console {
     }
     
     /**
-     * EN: Displays a prompt and reads a double. Repeats until valid input is entered.
-     * ES: Muestra un mensaje y lee un número double. Repite hasta que el usuario ingrese un valor válido.
+    Displays a prompt and reads a double. Repeats until valid input is entered.
      */
     public  double readDouble(String prompt) {
         while (true) {
@@ -73,8 +64,7 @@ public class Console {
         }
     }
     /**
-     * EN: Reads a string line from the console using the provided message.
-     * ES: Lee una línea de texto desde consola usando el mensaje proporcionado.
+    Reads a string line from the console using the provided message.
      */
     public  String readString(String msg) {
         System.out.print(msg);
