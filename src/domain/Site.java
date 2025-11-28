@@ -11,19 +11,20 @@ import java.util.List;
 public class Site implements Serializable {
 
     // Ensures compatibility during serialization.
-    
+
     private static final long serialVersionUID = 1L;
-    // ATTRIBUTES 
-    private String name; // Site name 
-    private String location; //Site location 
-    private int maxCapacity; //Maximum capacity 
+    // ATTRIBUTES
+    private int id;
+    private String name; // Site name
+    private String location; // Site location
+    private int maxCapacity; // Maximum capacity
     private ArrayList<String> availableHours; // Available hours
-    private ArrayList<String> amenities; //Amenities
+    private ArrayList<String> amenities; // Amenities
     private String contactPerson; // Contact person
     // CONSTRUCTOR
 
     /**
-      Creates a new Site with all required information.
+     * Creates a new Site with all required information.
      */
     public Site(String name, String location, int maxCapacity, int id,
             ArrayList<String> availableHours, ArrayList<String> amenities,
@@ -36,7 +37,8 @@ public class Site implements Serializable {
         this.amenities = amenities;
         this.contactPerson = contactPerson;
     }
-    //secon CONSTRUCTOR 
+
+    // secon CONSTRUCTOR
     public Site(int id, String name, String location, int capacity) {
         this.id = id;
         this.name = name;
@@ -47,19 +49,17 @@ public class Site implements Serializable {
         this.contactPerson = "";
     }
 
-
     // BUSINESS LOGIC
-   
 
     /**
-     Checks whether the site has available time slots.
+     * Checks whether the site has available time slots.
      */
     public boolean isAvailable() {
         return !availableHours.isEmpty();
     }
 
     /**
-     Books a time slot (removes it from available hours).
+     * Books a time slot (removes it from available hours).
      */
     public void bookSlot(String hour) {
         availableHours.remove(hour);
@@ -80,11 +80,11 @@ public class Site implements Serializable {
     }
 
     public int getId() {
-        return id;
+        return this.id;
     }
 
     /**
-     Returns available hours (list can still be modified externally).
+     * Returns available hours (list can still be modified externally).
      */
     public List<String> getAvailableHours() {
         return availableHours;
