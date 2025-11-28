@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * EN: Represents a physical site or venue where events can be hosted.
+ * Represents a physical site or venue where events can be hosted.
  * Stores location, capacity, available hours, amenities, and a contact person.
  */
 public class Site implements Serializable {
@@ -13,7 +13,7 @@ public class Site implements Serializable {
     // Ensures compatibility during serialization.
     
     private static final long serialVersionUID = 1L;
-    // ATTRIBUTES / ATRIBUTOS
+    // ATTRIBUTES 
     private String name; // Site name 
     private String location; //Site location 
     private int maxCapacity; //Maximum capacity 
