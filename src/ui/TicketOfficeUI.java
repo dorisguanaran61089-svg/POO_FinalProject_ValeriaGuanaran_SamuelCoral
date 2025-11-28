@@ -11,29 +11,24 @@ import domain.TicketOffice;
 import domain.VipCustomer;
 
 /**
- * EN: Console user interface for the TicketOffice system. Displays menu, reads
+ * Console user interface for the TicketOffice system. Displays menu, reads
  * input,
  * and delegates actions to the TicketOffice model.
- *
- * ES: Interfaz de consola para el sistema TicketOffice. Muestra el menú, lee
- * entradas
- * y delega acciones al modelo TicketOffice.
  */
 public class TicketOfficeUI {
 
-    // EN: Main model controller
-    // ES: Controlador principal del modelo
+    // Main model controller
     private TicketOffice ticketOffice;
     // cree oficce data
     private TicketOfficeData tOfficeData;
     private File path = new File("src/data/newData.dat");
 
-    // EN: Scanner used to read user input from console
-    // ES: Scanner usado para leer la entrada del usuario desde consola
+    // Scanner used to read user input from console
+   
     private Console console;
 
-    // EN: Constructor initializes the model and the scanner
-    // ES: Constructor que inicializa el modelo y el scanner
+    // Constructor initializes the model and the scanner
+    
     public TicketOfficeUI() {
         this.ticketOffice = new TicketOffice();
         this.console = new Console();
@@ -48,10 +43,8 @@ public class TicketOfficeUI {
     }
 
     /**
-     * EN: Starts the UI loop. Shows the menu and executes selected options until
+     * Starts the UI loop. Shows the menu and executes selected options until
      * exit.
-     * ES: Inicia el bucle de la UI. Muestra el menú y ejecuta las opciones
-     * seleccionadas hasta salir.
      */
     public void start() {
         int option = -1;
@@ -70,7 +63,7 @@ public class TicketOfficeUI {
                 case 3:
                     sellTicket();
                     break;
-                 case 4:
+                case 4:
                     registerSite();
                     break;
                 case 5:
@@ -122,10 +115,8 @@ public class TicketOfficeUI {
         } while (option != 0);
     }
 
-    /**
-     * EN: Displays the main menu.
-     * ES: Muestra el menú principal.
-     */
+    // Muestra el menú principal.
+
     private void showMenu() {
 
         System.out.println("------TICKET SYSTEM------");
@@ -137,11 +128,11 @@ public class TicketOfficeUI {
         System.out.println("6. List customers");
         System.out.println("7. List sold tickets");
         System.out.println("8. Search event by name");
-        System.out.println("9. Search event by ID");// listar eventos antes
+        System.out.println("9. Search event by ID");
         System.out.println("10. Search customer by ID");
         System.out.println("11. Generate report");
         System.out.println("12. Save data");
-        System.out.println("13. Load data");// corregir
+        System.out.println("13. Load data");
         System.out.println("14. Modify customer");
         System.out.println("15. Delete customer");
         System.out.println("16. Modify event");
@@ -149,7 +140,7 @@ public class TicketOfficeUI {
         System.out.println("0. Exit");
         System.out.println("=========================");
     }
-       
+
     private void registerSite() {
         System.out.println("--- Register Site ---");
 
@@ -170,8 +161,7 @@ public class TicketOfficeUI {
     // Event-related methods
 
     /**
-     * EN: Modify an existing event selected by ID.
-     * ES: Modifica un evento existente seleccionado por ID.
+      Modify an existing event selected by ID.
      */
     private void modifyEvent() {
         System.out.println("--- Modify Event ---");
@@ -222,8 +212,7 @@ public class TicketOfficeUI {
     }
 
     /**
-     * EN: Delete an event by ID.
-     * ES: Elimina un evento por ID.
+     * Delete an event by ID.
      */
     private void deleteEvent() {
         System.out.println("--- Delete Event ---");
@@ -241,8 +230,7 @@ public class TicketOfficeUI {
     }
 
     /**
-     * EN: Register a new event reading required fields from the user.
-     * ES: Registra un nuevo evento leyendo campos requeridos del usuario.
+     *Register a new event reading required fields from the user.
      */
     private void registerEvent() {
         System.out.println("--- Register Event ---");
@@ -250,8 +238,8 @@ public class TicketOfficeUI {
         int id = console.readInt("ID: ");
         String name = console.readString("Name: ");
 
-        // EN: Use validated date/time input
-        // ES: Usar entrada de fecha/hora validada
+        //Use validated date/time input
+       
         LocalDateTime dateTime = readValidDateTime();
 
         double price = console.readDouble("Ticket price: ");
@@ -269,8 +257,7 @@ public class TicketOfficeUI {
 
     // Customer-related methods
     /**
-     * EN: Modify an existing customer.
-     * ES: Modifica un cliente existente.
+     *Modify an existing customer.
      */
     private void modifyCustomer() {
         System.out.println("--- Modify Customer ---");
@@ -297,8 +284,7 @@ public class TicketOfficeUI {
     }
 
     /**
-     * EN: Delete a customer by ID.
-     * ES: Elimina un cliente por ID.
+     *Delete a customer by ID.
      */
     private void deleteCustomer() {
         System.out.println("\n--- Delete Customer ---");
@@ -317,7 +303,6 @@ public class TicketOfficeUI {
 
     /**
      * EN: Register a new customer (normal or VIP).
-     * ES: Registra un nuevo cliente (normal o VIP).
      */
     private void registerCustomer() {
         System.out.println("Register Customer");
@@ -347,8 +332,7 @@ public class TicketOfficeUI {
     // Ticket-related methods
 
     /**
-     * EN: Sell a ticket for a given event and customer.
-     * ES: Vende un ticket para un evento y cliente dados.
+     *  Sell a ticket for a given event and customer.
      */
     private void sellTicket() {
         System.out.println("Sell Ticket");
@@ -374,8 +358,7 @@ public class TicketOfficeUI {
     }
 
     /**
-     * EN: List all events printing their toString representation.
-     * ES: Lista todos los eventos imprimiendo su representación toString.
+     *List all events printing their toString representation.
      */
     private void listEvents() {
         System.out.println("Events List");
@@ -385,8 +368,7 @@ public class TicketOfficeUI {
     }
 
     /**
-     * EN: List all customers.
-     * ES: Lista todos los clientes.
+    List all customers.
      */
     private void listCustomers() {
         System.out.println("Customers List");
@@ -396,8 +378,7 @@ public class TicketOfficeUI {
     }
 
     /**
-     * EN: List all tickets sold.
-     * ES: Lista todos los tickets vendidos.
+     List all tickets sold.
      */
     private void listTickets() {
         System.out.println("Sold Tickets");
@@ -407,8 +388,7 @@ public class TicketOfficeUI {
     }
 
     /**
-     * EN: Search for an event by name and print it.
-     * ES: Busca un evento por nombre e imprime el resultado.
+     Search for an event by name and print it. 
      */
     private void searchEventByName() {
         String name = console.readString("Event name: ");
@@ -421,8 +401,7 @@ public class TicketOfficeUI {
     }
 
     /**
-     * EN: Search for an event by ID and print it.
-     * ES: Busca un evento por ID e imprime el resultado.
+    Search for an event by ID and print it.
      */
     private void searchEventById() {
         int id = console.readInt("Event ID: ");
@@ -435,8 +414,7 @@ public class TicketOfficeUI {
     }
 
     /**
-     * EN: Search for a customer by ID and print it.
-     * ES: Busca un cliente por ID e imprime el resultado.
+     Search for a customer by ID and print it.
      */
     private void searchCustomerById() {
         int id = console.readInt("Customer ID: ");
@@ -449,10 +427,8 @@ public class TicketOfficeUI {
     }
 
     /**
-     * EN: Reads a validated LocalDateTime from the user.
-     * Keeps asking until a parsable date+time is provided.
-     * ES: Lee un LocalDateTime validado del usuario.
-     * Repite hasta que se proporcione una fecha+hora parseable.
+      Reads a validated LocalDateTime from the user.
+      Keeps asking until a parsable date+time is provided.
      */
     private LocalDateTime readValidDateTime() {
         LocalDateTime dateTime = null;
@@ -474,8 +450,7 @@ public class TicketOfficeUI {
     }
 
     /**
-     * EN: Generate report by delegating to the model.
-     * ES: Genera el reporte delegando al modelo.
+    Generate report by delegating to the model.
      */
     private void generateReport() {
         System.out.println("Report");
@@ -483,16 +458,14 @@ public class TicketOfficeUI {
     }
 
     /**
-     * EN: Placeholder for saving data (not implemented yet).
-     * ES: Marcador para guardar datos (no implementado aún).
+     Placeholder for saving data (not implemented yet).
      */
     private void saveData() {
         System.out.println("(Save data not implemented yet)");
     }
 
     /**
-     * EN: Placeholder for loading data (not implemented yet).
-     * ES: Marcador para cargar datos (no implementado aún).
+    Placeholder for loading data (not implemented yet).
      */
     private void loadData() {
         System.out.println("(Load data not implemented yet)");
